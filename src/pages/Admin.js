@@ -1,9 +1,10 @@
 import React from 'react';
-import {Container} from "react-bootstrap";
+import {Button, Container} from "react-bootstrap";
 
 const Admin = () => {
     return (
         <Container>
+            <Button>Админ</Button>
             Admin
         </Container>
     );

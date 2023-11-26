@@ -4,6 +4,7 @@ import { Row } from 'react-bootstrap';
 import { observer } from 'mobx-react-lite';
 import { Context } from '../index';
 import ItemItem from './ItemItem';
+import CollectionItem from "./CollectionItem";
 
 const ItemList = observer(({ collectionId }) => {
     const { item } = useContext(Context);
@@ -11,7 +12,7 @@ const ItemList = observer(({ collectionId }) => {
 
     return (
         <Row className="d-flex">
-            {filteredItems.map((item) => (
+            {filteredItems && filteredItems.map((item) => (
                 <ItemItem key={item.id} item={item} />
             ))}
         </Row>

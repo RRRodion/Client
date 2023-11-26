@@ -9,7 +9,7 @@ const CollectionItem = ({collection}) => {
         <Col md={3} className={"mt-3"} onClick={() => navigate(COLLECTION_ROUTE + '/' + collection.id)}>
             <Card
             style={{width: 150, cursor:'pointer'}} border={"light"}>
-                <Image width={150} height={150} src={collection.image_url}/>
+                <Image width={150} height={150} src={process.env.REACT_APP_API_URL + collection.image_url}/>
                 <div>
                     {collection.title}
                 </div>

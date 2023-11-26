@@ -15,10 +15,13 @@ const CollectionInfo = observer(() => {
         <Row>
         <Col md={3}>
             <div>
-                <Image width={150} height={150} src={selectedCollection.image_url} />
+                <Image width={150} height={150} src={process.env.REACT_APP_API_URL + selectedCollection.image_url} />
                 <ListGroup>
                     <ListGroup.Item>
                         {selectedCollection.title}
+                    </ListGroup.Item>
+                    <ListGroup.Item>
+                        {selectedCollection.description}
                     </ListGroup.Item>
                 </ListGroup>
             </div>

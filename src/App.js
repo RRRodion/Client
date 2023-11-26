@@ -5,7 +5,7 @@ import Navbar from "./components/NavBar"
 import {observer} from "mobx-react-lite";
 import {Context} from "./index";
 import {check} from "./http/userAPI";
-import data from "bootstrap/js/src/dom/data";
+import {Spinner} from "react-bootstrap";
 
 const App = observer(() => {
     const {user} = useContext(Context)
@@ -14,9 +14,13 @@ const App = observer(() => {
     useEffect(() => {
         check().then(data =>{
             user.setUser(true)
-            user.setIsAuth(true)
+            user.setIsAuth(false)
         }).finally(() => setLoading(false))
     }, []);
+
+    if (loading){
+        return <Spinner animation={"grow"}/>
+    }
     return (
         <BrowserRouter>
             <Navbar/>

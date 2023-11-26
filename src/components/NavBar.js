@@ -17,7 +17,7 @@ const NavBar = observer( () => {
     return (
         <Navbar bg="dark" data-bs-theme="dark">
             <Container>
-                <Navbar.Brand style={{ color: 'white' }}  onClick={() => navigate(COLLECTIONS_ROUTE)}>Коллекции</Navbar.Brand>
+                <Navbar.Brand style={{ color: 'white', cursor:'pointer'}}  onClick={() => navigate(COLLECTIONS_ROUTE)}>Коллекции</Navbar.Brand>
                 <InputGroup className="w-auto mx-4">
                     <FormControl
                         type="text"

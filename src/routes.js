@@ -20,7 +20,7 @@ export const authRoutes = [
 ]
 export const publicRoutes = [
     {
-        path: COLLECTIONS_ROUTE + '/:id',
+        path: COLLECTIONS_ROUTE,
         Component: Collections
     },
     {

@@ -4,7 +4,6 @@ import {COLLECTIONS_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE} from "../utils/const
 import {NavLink, useLocation, useNavigate} from "react-router-dom";
 import {login, registration} from "../http/userAPI";
 import {observer} from "mobx-react-lite";
-import context from "react-bootstrap/NavbarContext";
 import {Context} from "../index";
 
 const Auth = observer( () => {
