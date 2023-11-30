@@ -14,7 +14,7 @@ const Item = observer(() => {
         <Container className="mt-3">
             <Row>
                 <Col md={4}>
-                    <img width={300} height={300} src={process.env.REACT_APP_API_URL + selectedItem.image_url} alt={}/>
+                    <img width={300} height={300} src={process.env.REACT_APP_API_URL + selectedItem.image_url}/>
                 </Col>
                 <Col md={2}>
                     <Row className="d-flex flex-column align-items-center">
