@@ -1,4 +1,5 @@
 import {makeAutoObservable} from "mobx";
+import axios from "axios";
 
 export default class CollectionCollection {
     constructor() {
@@ -14,6 +15,7 @@ export default class CollectionCollection {
     }
     setCollection(collection){
         this._collection= collection
+        console.log(collection)
     }
     setSelectedTheme(theme){
         this._selectedTheme=theme
@@ -30,7 +32,15 @@ export default class CollectionCollection {
     get selectedTheme(){
         return this._selectedTheme
     }
-    get selectedCollection(){
+    get selectedCollectionByTheme(){
         return this._selectedCollection
     }
+    /*async fetchCollectionByTheme(themeId) {
+        try {
+            const response = await axios.get(`/api/collection/byTheme/`+themeId);
+            this.setSelectedCollection(response.data);
+        } catch (error) {
+            console.error("Error fetching collection by theme:", error);
+        }
+    }*/
 }

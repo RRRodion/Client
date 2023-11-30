@@ -1,9 +1,6 @@
 import React, {useContext, useEffect} from 'react';
 import {Col, Container, Row} from "react-bootstrap";
 import CollectionInfo from "../components/CollectionInfo";
-import ItemList from "../components/ItemList";
-import ThemeBar from "../components/ThemeBar";
-import CollectionList from "../components/CollectionList";
 import {fetchItem} from "../http/ItemApi";
 import {Context} from "../index";
 

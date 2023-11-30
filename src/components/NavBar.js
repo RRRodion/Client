@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {Context} from "../index";
 import {Button, Container, FormControl, InputGroup, Nav, Navbar} from "react-bootstrap";
-import {ADMIN_ROUTE, COLLECTIONS_ROUTE, LOGIN_ROUTE} from "../utils/consts";
+import {ADMIN_ROUTE, COLLECTIONS_ROUTE, LOGIN_ROUTE, USERCOL_ROUTE, USERCOLLETION_ROUTE} from "../utils/consts";
 import {observer} from "mobx-react-lite";
 import {useNavigate} from 'react-router-dom'
 
@@ -12,6 +12,8 @@ const NavBar = observer( () => {
     const logOut = () => {
         user.setUser({})
         user.setIsAuth(false)
+        navigate(LOGIN_ROUTE)
+        localStorage.removeItem('token');
     }
 
     return (
@@ -33,7 +35,14 @@ const NavBar = observer( () => {
                     <Nav className="ms-lg-auto" style={{ color: 'white' }}>
                         <Button
                             variant={"outline-light"}
-                            onClick={()=> navigate(ADMIN_ROUTE)}
+                            onClick={() => navigate(USERCOLLETION_ROUTE)}
+                        >
+                            Мои коллекции
+                        </Button>
+                        <Button
+                            variant={"outline-light"}
+                            onClick={() => navigate(ADMIN_ROUTE)}
+                            style={{ marginLeft: '10px' }}
                         >
                             Админ панель
                         </Button>

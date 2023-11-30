@@ -19,11 +19,13 @@ const Auth = observer( () => {
             let data;
             if (isLogin){
                 data = await login(username,password)
+                console.log('11111111111111111111111111' + data.id)
             } else {
                 data = await registration(username, password)
             }
             user.setUser(user)
             user.setIsAuth(true)
+            localStorage.setItem('id', data.id)
             navigate(COLLECTIONS_ROUTE)
         }catch (e) {
             alert(e.response.data.message)
